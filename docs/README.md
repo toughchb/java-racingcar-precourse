@@ -48,4 +48,4 @@
 - [x] Car들의 리스트를 가진다.
 - [x] Car들중 가장 큰 Position을 구한다.
 - [x] Car들중 가장 큰 Position을 가진 Car 리스트를 구한다.
-- [ ] Car에 랜덤값을 넘긴다.
+- [x] Car에 랜덤값을 넘긴다.

@@ -33,6 +33,12 @@ public class Cars {
         }
     }
 
+    public void carsMove() {
+        for (Car participant : participants) {
+            participant.move(new RandomMovingStrategy());
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
