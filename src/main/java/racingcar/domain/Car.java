@@ -28,6 +28,12 @@ public class Car {
         }
     }
 
+    public void move(MovingStrategy strategy) {
+        if (strategy.isMovable()) {
+            position.movePosition();
+        }
+    }
+
     public Position getMaxPosition(Position maxPosition) {
         return this.position.biggerThan(maxPosition) ? this.position : maxPosition;
     }

@@ -19,4 +19,18 @@ public class CarTest {
         car.move(4);
         assertThat(car).isEqualTo(new Car(new CarName("car"), new Position(1)));
     }
+
+    @Test
+    void 멈춘다() {
+        Car car = new Car(new CarName("car"), new Position(0));
+        car.move(() -> false);
+        assertThat(car).isEqualTo(new Car(new CarName("car"), new Position(0)));
+    }
+
+    @Test
+    void 이동한다() {
+        Car car = new Car(new CarName("car"), new Position(0));
+        car.move(() -> true);
+        assertThat(car).isEqualTo(new Car(new CarName("car"), new Position(1)));
+    }
 }
