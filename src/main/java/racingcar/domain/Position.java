@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class Position {
     public static final int MIN_NUMBER = 0;
@@ -12,7 +13,8 @@ public class Position {
 
     public Position(int position) {
         if (position < MIN_NUMBER) {
-            throw new IllegalArgumentException();
+            ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+            throw new IllegalArgumentException(resourceBundle.getString("error.try-time.positive"));
         }
         this.position = position;
     }
