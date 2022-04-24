@@ -8,9 +8,32 @@ public class Car {
     private final CarName carName;
     private final Position position;
 
+    public Car(String carName, int position) {
+        this.carName = new CarName(carName);
+        this.position = new Position(position);
+    }
+
+    public Car(final String carName) {
+        this(carName, 0);
+    }
+
     public Car(CarName carName, Position position) {
         this.carName = carName;
         this.position = position;
+    }
+
+    public void move(int number) {
+        if (number >= MOVING_CRITERION) {
+            position.movePosition();
+        }
+    }
+
+    public Position getMaxPosition(Position maxPosition) {
+        return this.position.biggerThan(maxPosition) ? this.position : maxPosition;
+    }
+
+    public boolean isWinner(Position maxPosition) {
+        return this.position.equals(maxPosition);
     }
 
     @Override
@@ -28,12 +51,6 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(carName, position);
-    }
-
-    public void move(int number) {
-        if (number >= MOVING_CRITERION) {
-            position.movePosition();
-        }
     }
 
 }

@@ -45,6 +45,6 @@
     - [x] equals 메소드
 
 ## Cars
-- [ ] Car들의 리스트를 가진다.
-- [ ] Car들중 가장 큰 Position을 구한다.
-- [ ] Car들중 가장 큰 Position을 가진 Car를 구한다.
+- [x] Car들의 리스트를 가진다.
+- [x] Car들중 가장 큰 Position을 구한다.
+- [x] Car들중 가장 큰 Position을 가진 Car 리스트를 구한다.

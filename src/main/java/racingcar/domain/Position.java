@@ -7,7 +7,7 @@ public class Position {
     private int position;
 
     public Position() {
-        this(0);
+        this(MIN_NUMBER);
     }
 
     public Position(int position) {
@@ -15,6 +15,14 @@ public class Position {
             throw new IllegalArgumentException();
         }
         this.position = position;
+    }
+
+    public Position movePosition() {
+        return new Position(this.position += 1);
+    }
+
+    public boolean biggerThan(Position maxPosition) {
+        return this.position > maxPosition.position;
     }
 
     @Override
@@ -34,7 +42,4 @@ public class Position {
         return Objects.hash(position);
     }
 
-    public Position movePosition() {
-        return new Position(this.position += 1);
-    }
 }
