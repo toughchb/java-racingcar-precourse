@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import java.util.Objects;
+import racingcar.domain.dto.CarDto;
 
 public class Car {
     public static final int MOVING_CRITERION = 4;
@@ -40,6 +41,10 @@ public class Car {
 
     public boolean isWinner(Position maxPosition) {
         return this.position.equals(maxPosition);
+    }
+
+    public CarDto convertDto() {
+        return new CarDto(this.carName.getCarName(), this.position.getPosition());
     }
 
     @Override

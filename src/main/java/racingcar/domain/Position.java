@@ -19,6 +19,10 @@ public class Position {
         this.position = position;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     public Position movePosition() {
         return new Position(this.position += 1);
     }

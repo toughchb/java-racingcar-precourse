@@ -36,6 +36,7 @@
 
 - [x] Car 는 이름(CarName)과 위치 정보(Position)를 가진다.
 - [x] 자동차는 들어온 숫자 값이 4 이상이면 위치 정보를 1 증가 시킨다.
+- [x] 결과 출력을 위해 Dto 추가
   ### Position
     - [x] 위치 값을 증가 시킬 수 있다.
     - [x] equals 메소드
@@ -49,6 +50,7 @@
 - [x] Car들중 가장 큰 Position을 구한다.
 - [x] Car들중 가장 큰 Position을 가진 Car 리스트를 구한다.
 - [x] Car에 랜덤값을 넘긴다.
+- [x] 결과 출력을 위해 Dto 추가
 
 ## 검증기
  ### inputValidator
