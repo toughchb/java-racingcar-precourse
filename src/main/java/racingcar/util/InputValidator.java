@@ -13,8 +13,16 @@ public class InputValidator {
             throw new IllegalArgumentException(resourceBundle.getString("error.car-name.format"));
         }
     }
+    public static void validateTryTime(String input) {
+        validateTryTimeIsInteger(input);
+        validateTryTimeIsPositive(input);
+    }
 
-    public static void validateTryTimeIsInteger(String input) {
+    private static void validateTryTimeIsPositive(String input) {
+        if (Integer.parseInt(input) < 0) throw new IllegalArgumentException(resourceBundle.getString("error.try-time.positive"));
+    }
+
+    private static void validateTryTimeIsInteger(String input) {
         try {
             Integer.parseInt(input);
         } catch (NumberFormatException e) {
