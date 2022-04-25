@@ -14,11 +14,6 @@ public class CarNameTest {
                 .hasMessage("자동차의 이름이 존재 해야 합니다.");
 
         assertThatThrownBy(
-                () -> new CarName(null)
-        ).isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("자동차의 이름이 존재 해야 합니다.");
-
-        assertThatThrownBy(
                 () -> new CarName("abcdef")
         ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름은 5 글자를 넘어갈 수 없습니다.");
