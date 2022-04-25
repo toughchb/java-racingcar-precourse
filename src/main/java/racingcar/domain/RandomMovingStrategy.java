@@ -8,6 +8,7 @@ public class RandomMovingStrategy implements MovingStrategy {
 
     public static final int START_INCLUSIVE = 0;
     public static final int END_INCLUSIVE = 9;
+
     @Override
     public boolean isMovable() {
         return getRandomNumber() >= MOVING_CRITERION;

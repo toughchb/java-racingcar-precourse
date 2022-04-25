@@ -4,7 +4,6 @@ import java.util.Objects;
 import racingcar.domain.dto.CarDto;
 
 public class Car {
-    public static final int MOVING_CRITERION = 4;
 
     private final CarName carName;
     private final Position position;
@@ -21,12 +20,6 @@ public class Car {
     public Car(CarName carName, Position position) {
         this.carName = carName;
         this.position = position;
-    }
-
-    public void move(int number) {
-        if (number >= MOVING_CRITERION) {
-            position.movePosition();
-        }
     }
 
     public void move(MovingStrategy strategy) {
