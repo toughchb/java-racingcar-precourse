@@ -49,3 +49,8 @@
 - [x] Car들중 가장 큰 Position을 구한다.
 - [x] Car들중 가장 큰 Position을 가진 Car 리스트를 구한다.
 - [x] Car에 랜덤값을 넘긴다.
+
+## 검증기
+ ### inputValidator
+  - [ ] 입력한 자동차 이름 문자열이 , 로 split 했을때 값이 존재 하는지
+  - [ ] 입력한 재시도 숫자 값이 int 타입 인지
