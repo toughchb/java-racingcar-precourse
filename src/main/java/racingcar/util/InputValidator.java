@@ -2,15 +2,17 @@ package racingcar.util;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class InputValidator {
-    static ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+    static final private String ERROR_TRY_TIME_TYPE = "시도 횟수는 숫자여야 합니다.";
+    static final private String ERROR_TRY_TIME_POSITIVE = "시도 횟수는 양수여야 합니다.";
+    static final private String ERROR_CAR_NAME_FORMAT = "자동차의 이름 입력 형태 오류 (이름은 쉼표(,) 기준으로 빈값 불가)";
+
 
     public static void validateCarNamesString(String input) {
         List<String> inputCars = Arrays.asList(input.split(","));
         if (inputCars.isEmpty()) {
-            throw new IllegalArgumentException(resourceBundle.getString("error.car-name.format"));
+            throw new IllegalArgumentException(ERROR_CAR_NAME_FORMAT);
         }
     }
 
@@ -21,7 +23,7 @@ public class InputValidator {
 
     private static void validateTryTimeIsPositive(String input) {
         if (Integer.parseInt(input) < 0) {
-            throw new IllegalArgumentException(resourceBundle.getString("error.try-time.positive"));
+            throw new IllegalArgumentException(ERROR_TRY_TIME_POSITIVE);
         }
     }
 
@@ -29,7 +31,7 @@ public class InputValidator {
         try {
             Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(resourceBundle.getString("error.try-time.type"));
+            throw new IllegalArgumentException(ERROR_TRY_TIME_TYPE);
         }
     }
 }

@@ -1,25 +1,25 @@
 package racingcar.domain;
 
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 public class CarName {
     private static final int MAX_CAR_NAME_LENGTH = 5;
+    private static final String ERROR_CAR_NAME_NEED = "자동차의 이름이 존재 해야 합니다.";
+    private static final String ERROR_CAR_NAME_LENGTH = "자동차 이름은 5 글자를 넘어갈 수 없습니다.";
+
     private final String carName;
 
     public CarName(String carName) {
-        validateName(carName);
+        validateName(carName.trim());
         this.carName = carName;
     }
 
     private void validateName(String name) {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-
         if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException(resourceBundle.getString("error.car-name.need"));
+            throw new IllegalArgumentException(ERROR_CAR_NAME_NEED);
         }
         if (name.length() > MAX_CAR_NAME_LENGTH) {
-            throw new IllegalArgumentException(resourceBundle.getString("error.car-name.length"));
+            throw new IllegalArgumentException(ERROR_CAR_NAME_LENGTH);
         }
     }
 

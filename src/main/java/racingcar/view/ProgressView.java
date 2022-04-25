@@ -1,15 +1,15 @@
 package racingcar.view;
 
 import java.util.List;
-import java.util.ResourceBundle;
 import racingcar.domain.dto.CarDto;
 import racingcar.domain.dto.CarsDto;
 
 public class ProgressView {
-    static ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+
+    static final private String GAME_RUNNING_RESULT="실행 결과";
 
     public static void printProgressStart() {
-        System.out.println(resourceBundle.getString("game.run.result"));
+        System.out.println(GAME_RUNNING_RESULT);
     }
 
     public static void printProgress(CarsDto carsDto) {

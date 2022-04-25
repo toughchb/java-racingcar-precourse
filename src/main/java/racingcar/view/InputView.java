@@ -1,15 +1,14 @@
 package racingcar.view;
 
-import java.util.ResourceBundle;
-
 public class InputView {
-    static ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+    private static final String INPUT_CAR_MESSAGE="경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String INPUT_RETRY_TIME_MESSAGE="시도할 회수는 몇회인가요?";
 
     static public void printCarNamesInputMessage() {
-        System.out.println(resourceBundle.getString("input.cars"));
+        System.out.println(INPUT_CAR_MESSAGE);
     }
 
     static public void printTryTimesInputMessage() {
-        System.out.println(resourceBundle.getString("input.try-times"));
+        System.out.println(INPUT_RETRY_TIME_MESSAGE);
     }
 }

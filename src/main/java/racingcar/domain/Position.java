@@ -1,10 +1,10 @@
 package racingcar.domain;
 
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 public class Position {
-    public static final int MIN_NUMBER = 0;
+    private static final int MIN_NUMBER = 0;
+    private static final String ERROR_POSITION_POSITIVE = "위치 값은 양수여야 합니다.";
     private int position;
 
     public Position() {
@@ -13,8 +13,7 @@ public class Position {
 
     public Position(int position) {
         if (position < MIN_NUMBER) {
-            ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-            throw new IllegalArgumentException(resourceBundle.getString("error.position.positive"));
+            throw new IllegalArgumentException(ERROR_POSITION_POSITIVE);
         }
         this.position = position;
     }
