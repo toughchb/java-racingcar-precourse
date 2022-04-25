@@ -3,6 +3,8 @@ package racingcar.domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import racingcar.domain.dto.CarDto;
+import racingcar.domain.dto.CarsDto;
 
 public class Cars {
     private final List<Car> participants;
@@ -37,6 +39,23 @@ public class Cars {
         for (Car participant : participants) {
             participant.move(new RandomMovingStrategy());
         }
+    }
+
+    public CarsDto convertToDto(List<Car> carList) {
+        List<CarDto> carsDto = new ArrayList<>();
+        for (Car car : carList) {
+            carsDto.add(car.convertDto());
+        }
+        return new CarsDto(carsDto);
+    }
+
+    public CarsDto getWinnersDto() {
+        List<Car> winners = findWinners(findMaxPosition());
+        return convertToDto(winners);
+    }
+
+    public CarsDto progressMove() {
+        return convertToDto(participants);
     }
 
     @Override
