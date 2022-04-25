@@ -8,7 +8,7 @@ import racingcar.domain.dto.CarsDto;
 public class WinnerView {
 
     static private final String JOIN_DELIM = ",";
-    static private final String GAME_SINNER_MESSAGE = "최종 우승자: ";
+    static private final String GAME_WINNER_MESSAGE = "최종 우승자: ";
 
     public static void printWinners(CarsDto carsDto) {
         List<CarDto> cars = carsDto.getCars();
@@ -17,6 +17,6 @@ public class WinnerView {
             joiner.add(car.getCarName());
         }
 
-        System.out.println(GAME_SINNER_MESSAGE + joiner.toString());
+        System.out.println(GAME_WINNER_MESSAGE + joiner.toString());
     }
 }
