@@ -14,7 +14,7 @@ public class Position {
     public Position(int position) {
         if (position < MIN_NUMBER) {
             ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-            throw new IllegalArgumentException(resourceBundle.getString("error.try-time.positive"));
+            throw new IllegalArgumentException(resourceBundle.getString("error.position.positive"));
         }
         this.position = position;
     }
