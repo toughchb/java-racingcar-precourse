@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.dto.CarDto;
+import racingcar.domain.dto.CarsDto;
 
 public class CarsTest {
 
@@ -28,5 +30,14 @@ public class CarsTest {
         Position maxPosition = cars.findMaxPosition();
         List<Car> winners = cars.findWinners(maxPosition);
         assertThat(winners).containsExactly(car2, car3);
+    }
+
+    @Test
+    void Dto를_통해_progressionBar_구하기() {
+        Car car = new Car("car", 5);
+        Cars cars = new Cars(Arrays.asList(car));
+        CarsDto carsDto = cars.movingProgress();
+        List<CarDto> carsList = carsDto.getCars();
+        assertThat(carsList.get(0).getPositionBarString()).isEqualTo("-----");
     }
 }

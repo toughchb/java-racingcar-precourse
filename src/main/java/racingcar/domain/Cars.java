@@ -41,7 +41,7 @@ public class Cars {
         }
     }
 
-    public CarsDto convertToDto(List<Car> carList) {
+    private CarsDto convertToDto(List<Car> carList) {
         List<CarDto> carsDto = new ArrayList<>();
         for (Car car : carList) {
             carsDto.add(car.convertDto());
@@ -54,7 +54,7 @@ public class Cars {
         return convertToDto(winners);
     }
 
-    public CarsDto progressMove() {
+    public CarsDto movingProgress() {
         return convertToDto(participants);
     }
 

@@ -61,7 +61,7 @@ public class RacingGameController {
         ProgressView.printProgressStart();
         for (int i = 0; i < tryTimes; i++) {
             cars.carsMove();
-            CarsDto carsDto = cars.progressMove();
+            CarsDto carsDto = cars.movingProgress();
             ProgressView.printProgress(carsDto);
         }
         WinnerView.printWinners(cars.getWinnersDto());
